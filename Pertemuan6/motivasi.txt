@@ -1,0 +1,2 @@
+Motivasi saya mengikuti bootcamp laravel pada sanbercode adalah 
+saya ingin memperdalam ilmu saya tentang laravel baik dari segi fitur, tampilan, command line maupun hal-hal lainnya
