@@ -15,7 +15,14 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-Route::get('/regis', [DashboardController::class, 'daftar']);
 Route::get('/', [AuthController::class, 'regis']);
+Route::get('/regis', [DashboardController::class, 'daftar']);
 Route::post('/home', [AuthController::class, 'home']);
+
+Route::get('/data_table', function(){
+    return view('data_table');
+});
+
+Route::get('/table', function(){
+    return view('table');
+});
