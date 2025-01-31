@@ -57,7 +57,30 @@
             </li>
           </ul>
         </li>
-        
+        <li class="nav-item">
+          <a href="/cast" class="nav-link">
+            <i class="nav-icon fas fa-users"></i> 
+            <p>
+              Casts
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/genre" class="nav-link">
+            <i class="nav-icon fas fa-users"></i> 
+            <p>
+              Genre
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/film" class="nav-link">
+            <i class="nav-icon fas fa-users"></i> 
+            <p>
+              Film
+            </p>
+          </a>
+        </li>
 </nav>
     <!-- /.sidebar-menu -->
   </div>
