@@ -1,9 +1,9 @@
 @extends('master')
 @section('title')
-CAST PAGES Create
+film PAGES Create
 @endsection
 @section('content')
-<form method="POST" action="/cast">
+<form method="POST" action="/film">
     @csrf
 
     @if ($errors->any())
@@ -16,17 +16,26 @@ CAST PAGES Create
     </div>
 @endif
     <div class="form-group">        
-      <label for="name">Cast Name</label>
-      <input type="text" class="form-control" id="name" name="name" aria-describedby="emailHelp">
+      <label for="title">Judul Film</label>
+      <input type="text" class="form-control" id="title" name="title" aria-describedby="emailHelp">
     </div>
     <div class="form-group">
-      <label for="age">Cast age</label>
-      <input type="text" class="form-control" id="age" name="age">
+      <label for="summary">Summary</label>
+      <input type="text" class="form-control" id="summary" name="summary">
     </div>
     <div class="form-group">
-      <label for="bio">Bio</label>
-      <textarea name="bio" id="bio" class="form-control" cols="30" rows="10"></textarea>
+      <label for="release_year">release_year</label>
+      <input type="text" class="form-control" id="release_year" name="release_year">
     </div>
+    <div class="form-group">
+      <label for="poster">poster</label>
+      <input type="text" class="form-control" id="poster" name="poster">
+    </div>
+    <div class="form-group">
+      <label for="genre_id">genre_id</label>
+      <input type="text" class="form-control" id="genre_id" name="genre_id">
+    </div>
+    
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 @endsection

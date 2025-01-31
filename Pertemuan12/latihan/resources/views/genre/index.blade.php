@@ -1,33 +1,31 @@
 @extends('master')
 @section('title')
-CAST PAGES INDEX (TAMPIL)
+Genre PAGES INDEX (TAMPIL)
 @endsection
 @section('content')
 
-<a href="/cast/create" class="btn btn-sm btn-info my-3">Create</a>
+<a href="/genre/create" class="btn btn-sm btn-info my-3">Create</a>
 
 <table class="table">
     <thead>
       <tr>
         <th scope="col">No</th>
-        <th scope="col">Cast Name</th>
-        <th scope="col">Age</th>
-        <th scope="col">Action</th>
+        <th scope="col">Genre Name</th>
+        <th scope="col">Genre</th>
       </tr>
     </thead>
     <tbody>
-    @forelse ($cast as $cs)
+    @forelse ($genre as $g)
     <tr>
     <th scope="row">{{$loop->iteration}}</th>
-    <td>{{$cs->name}}</td>
-    <td>{{$cs->age}}</td>
+    <td>{{$g->name}}</td>
     <td>
-        <form action="/cast/{{$cs->id}}" method="POST">
+        <form action="/genre/{{$g->id}}" method="POST">
             @csrf
             @method('DELETE')
             
-            <a href="/cast/{{$cs->id}}" class="btn btn-info btn-sm">Detail</a>
-            <a href="/cast/{{$cs->id}}/edit" class="btn btn-warning btn-sm">Edit</a>
+            <a href="/genre/{{$g->id}}" class="btn btn-info btn-sm">Detail</a>
+            <a href="/genre/{{$g->id}}/edit" class="btn btn-warning btn-sm">Edit</a>
             <input type="submit" value="delete" class="btn btn-danger btn-sm">
         </form>
     </td>

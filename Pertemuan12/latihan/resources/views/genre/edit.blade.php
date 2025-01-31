@@ -1,10 +1,10 @@
 @extends('master')
 @section('title')
-CAST PAGES UPDATE CAST
+Genre PAGES UPDATE
 @endsection
 @section('content')
 
-<form method="POST" action="/cast/{{$cast->id}}">
+<form method="POST" action="/genre/{{$genre->id}}">
     @csrf
     @method('PUT')
     @if ($errors->any())
@@ -17,16 +17,8 @@ CAST PAGES UPDATE CAST
     </div>
 @endif
     <div class="form-group">        
-      <label for="name">Cast Name</label>
-      <input type="text" class="form-control" value="{{$cast->name}}" id="name" name="name" aria-describedby="emailHelp">
-    </div>
-    <div class="form-group">
-      <label for="age">Cast age</label>
-      <input type="text" class="form-control" value="{{$cast->age}}" id="age" name="age">
-    </div>
-    <div class="form-group">
-      <label for="bio">Bio</label>
-      <textarea name="bio" id="bio" class="form-control" value="{{$cast->bio}}" cols="30" rows="10"></textarea>
+      <label for="name">Genre Name</label>
+      <input type="text" class="form-control" value="{{$genre->name}}" id="name" name="name" aria-describedby="emailHelp">
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>

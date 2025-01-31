@@ -4,7 +4,9 @@ CAST PAGES DETAIL CAST
 @endsection
 @section('content')
 
-<h1 class="text-primary">{{$cast->name}}</h1>
-<p>Umur : {{$cast->age}}</p>
-<p>Bio : {{$cast->bio}}</p>
+<h1 class="text-primary">{{$film->title}}</h1>
+<p>Summary : {{$film->summary}}</p>
+<p>Release Year : {{$film->release_year}}</p>
+<p>Poster : {{$film->poster}}</p>
+<p>Genre : {{$film->genre_id}}</p>
 @endsection

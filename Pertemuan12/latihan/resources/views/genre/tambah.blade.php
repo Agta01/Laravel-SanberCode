@@ -1,9 +1,9 @@
 @extends('master')
 @section('title')
-CAST PAGES Create
+Genre PAGES Create
 @endsection
 @section('content')
-<form method="POST" action="/cast">
+<form method="POST" action="/genre">
     @csrf
 
     @if ($errors->any())
@@ -16,16 +16,8 @@ CAST PAGES Create
     </div>
 @endif
     <div class="form-group">        
-      <label for="name">Cast Name</label>
+      <label for="name">Genre Name</label>
       <input type="text" class="form-control" id="name" name="name" aria-describedby="emailHelp">
-    </div>
-    <div class="form-group">
-      <label for="age">Cast age</label>
-      <input type="text" class="form-control" id="age" name="age">
-    </div>
-    <div class="form-group">
-      <label for="bio">Bio</label>
-      <textarea name="bio" id="bio" class="form-control" cols="30" rows="10"></textarea>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>

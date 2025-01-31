@@ -1,10 +1,11 @@
 @extends('master')
 @section('title')
-CAST PAGES DETAIL CAST
+genre PAGES DETAIL genre
 @endsection
 @section('content')
 
-<h1 class="text-primary">{{$cast->name}}</h1>
-<p>Umur : {{$cast->age}}</p>
-<p>Bio : {{$cast->bio}}</p>
+<h1 class="text-primary">{{$genre->name}}</h1>
+<p>ID : {{$genre->id}}</p>
+<p>Created at : {{$genre->created_at}}</p>
+<p>Updated at : {{$genre->updated_at}}</p>
 @endsection

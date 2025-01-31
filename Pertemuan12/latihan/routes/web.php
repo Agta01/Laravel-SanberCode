@@ -3,7 +3,10 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CastController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FilmController;
+use App\Http\Controllers\GenreController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
@@ -18,7 +21,7 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 */
 Route::get('/', [AuthController::class, 'regis']);
 Route::get('/regis', [DashboardController::class, 'daftar']);
-Route::post('/home', [AuthController::class, 'home']);
+Route::any('/home', [AuthController::class, 'home']);
 
 Route::get('/data_table', function(){
     return view('data_table');
@@ -46,33 +49,36 @@ Route::delete('/cast/{id}',[CastController::class, 'destroy']);
 
 //CRUD Genre
 // Create
-Route::get('/genre/create',[CastController::class, 'create']);
-Route::post('/genre',[CastController::class, 'store']);
+Route::get('/genre/create',[GenreController::class, 'create']);
+Route::post('/genre',[GenreController::class, 'store']);
 
 //Read
-Route::get('/genre',[CastController::class, 'index']);
-Route::get('/genre/{id}',[CastController::class, 'show']);
+Route::get('/genre',[GenreController::class, 'index']);
+Route::get('/genre/{id}',[GenreController::class, 'show']);
 
 //Update 
-Route::get('/genre/{id}/edit',[CastController::class, 'edit']);
-Route::put('/genre/{id}',[CastController::class, 'update']);
+Route::get('/genre/{id}/edit',[GenreController::class, 'edit']);
+Route::put('/genre/{id}',[GenreController::class, 'update']);
 
 //Delete
-Route::delete('/genre/{id}',[CastController::class, 'destroy']);
+Route::delete('/genre/{id}',[GenreController::class, 'destroy']);
 
 
 //CRUD Film
 // Create
-Route::get('/film/create',[CastController::class, 'create']);
-Route::post('/film',[CastController::class, 'store']);
+Route::get('/film/create',[FilmController::class, 'create']);
+Route::post('/film',[FilmController::class, 'store']);
 
 //Read
-Route::get('/film',[CastController::class, 'index']);
-Route::get('/film/{id}',[CastController::class, 'show']);
+Route::get('/film',[FilmController::class, 'index']);
+Route::get('/film/{id}',[FilmController::class, 'show']);
 
 //Update 
-Route::get('/film/{id}/edit',[CastController::class, 'edit']);
-Route::put('/film/{id}',[CastController::class, 'update']);
+Route::get('/film/{id}/edit',[FilmController::class, 'edit']);
+Route::put('/film/{id}',[FilmController::class, 'update']);
 
 //Delete
-Route::delete('/film/{id}',[CastController::class, 'destroy']);
+Route::delete('/film/{id}',[FilmController::class, 'destroy']);
+Auth::routes();
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
